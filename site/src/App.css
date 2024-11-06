@@ -1,32 +1,57 @@
 .logo {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 50px; /* Ajustez la taille selon vos besoins */
+  top: 40%;
+  right: 80%;
+  width: 200px; /* Ajustez la taille selon vos besoins */
 }
 
 .chat-bar {
   position: fixed;
-  bottom: 0;
-  width: 100%;
+  bottom: 20px; /* Relevée de 20px du bas */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px; /* Centrée et légèrement plus étroite */
+  max-width: 600px;
   background-color: #f0f0f0;
-  padding: 10px;
+  padding: 15px;
+  border-radius: 20px; /* Ajout d’un arrondi */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Ombre pour un effet de surélévation */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2; /* Pour être au-dessus des messages */
 }
 
 .messages {
-  max-height: 200px;
+  position: fixed;
+  bottom: 80px; /* Relevée de 60px au-dessus de la chat-bar */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px; /* Centrée et plus large */
+  max-width: 600px;
+  max-height: 750px;
   overflow-y: auto;
-  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  z-index: 1; /* En dessous de la chat-bar */
 }
 
 .chat-bar input {
-  width: 80%;
-  padding: 8px;
+  width: 75%;
+  padding: 10px;
+  border: none;
+  border-radius: 15px;
+  outline: none;
 }
 
 .chat-bar button {
-  padding: 8px;
-  margin-left: 5px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 15px;
+  background-color: #4CAF50; /* Ajustez selon vos besoins */
+  color: white;
+  cursor: pointer;
 }
 
 .App {
@@ -34,4 +59,8 @@
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
