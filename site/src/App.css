@@ -1,10 +1,3 @@
-.logo {
-  position: absolute;
-  top: 40%;
-  right: 80%;
-  width: 200px; /* Ajustez la taille selon vos besoins */
-}
-
 .chat-bar {
   position: fixed;
   bottom: 20px; /* Relevée de 20px du bas */
@@ -49,7 +42,7 @@
   padding: 10px 15px;
   border: none;
   border-radius: 15px;
-  background-color: #4CAF50; /* Ajustez selon vos besoins */
+  background-color: #7ed957;
   color: white;
   cursor: pointer;
 }
@@ -63,4 +56,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.main-content {
+  margin-left: 10%; /* Laisser de la place pour la barre latérale */
+  padding: 20px;
+  flex-grow: 1;
 }

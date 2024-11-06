@@ -1,0 +1,79 @@
+/* Sidebar.css */
+.sidebar {
+  width: 12%;
+  max-width: 250px; /* Largeur maximale pour la barre latérale ouverte */
+  height: 100vh;
+  background-color: #ffffff; /* Fond blanc */
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 10px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  overflow-y: hidden;
+  transition: width 0.3s ease; /* Transition pour l'animation de la largeur */
+}
+
+.sidebar.closed {
+  width: 30px; /* Largeur lorsque la barre latérale est fermée */
+  max-width: 30px; /* Empêche la largeur de dépasser quand fermée */
+  padding: 20px 5px; /* Réduit le padding en mode fermé */
+}
+
+.toggle-button {
+  position: absolute;
+  top: 10px;
+  right: -5px;
+  padding: 5px;
+  background-color: transparent;
+  color: #38b6ff;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 1000; /* Pour que le bouton reste visible */
+  transition: transform 0.3s;
+}
+
+.sidebar-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: opacity 0.3s ease; /* Ajoute une transition pour rendre le contenu visible/invisible */
+}
+
+.sidebar.closed .sidebar-content {
+  opacity: 0; /* Rendre le contenu invisible quand la barre est fermée */
+  pointer-events: none; /* Désactiver les interactions */
+}
+
+.logo-container {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.logo {
+  width: 80%; /* Ajuste la taille du logo (change si nécessaire) */
+  max-width: 100px; /* Largeur maximale du logo */
+  height: auto;
+  object-fit: contain; /* Garde le logo contenu dans le conteneur */
+  margin: 0 auto; /* Centre le logo */
+}
+
+.menu-item {
+  padding: 10px 20px;
+  margin: 10px 0;
+  width: 80%;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.menu-item:hover {
+  background-color: #f0f0f0; /* Couleur lors du survol */
+}
