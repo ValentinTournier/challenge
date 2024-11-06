@@ -55,7 +55,7 @@
 }
 
 .App {
-  background-image: url('/public/background.webp');
+  background-image: url('/public/Images/background.png');
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
