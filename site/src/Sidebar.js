@@ -15,13 +15,13 @@ function Sidebar() {
       </button>
       <div className="sidebar-content">
         <div className="logo-container">
-          <img src={`${process.env.PUBLIC_URL}/Images/logoRond.png`} alt="Logo Rond" className="logo" />
+          <img src={`${process.env.PUBLIC_URL}/Images/logoNom.png`} alt="Logo" className="logo" />
         </div>
         {isOpen && (
           <>
-            <div className="menu-item">Onglet 1</div>
-            <div className="menu-item">Onglet 2</div>
-            <div className="menu-item">Onglet 3</div>
+            <div className="menu-item">Acceuil</div>
+            <div className="menu-item">Statistiques</div>
+            <div className="menu-item">A Propos</div>
           </>
         )}
       </div>

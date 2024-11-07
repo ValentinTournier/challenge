@@ -5,12 +5,32 @@ function ChatBar() {
   const [input, setInput] = useState('');
   const messagesEndRef = useRef(null);
 
-  const handleSend = () => {
+  const handleSend = async () => {
     if (input) {
+      // Ajoute le message utilisateur à la liste
       setMessages([...messages, { user: "Vous", text: input }]);
+
+      // Envoie une requête au serveur Flask
+      try {
+        const response = await fetch('http://127.0.0.1:5000/chat', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ message: input }),
+        });
+
+        const data = await response.json();
+        // Ajoute la réponse du serveur Flask
+        setMessages((msgs) => [...msgs, { user: "Chatbot", text: data.response }]);
+      } catch (error) {
+        console.error("Erreur lors de la communication avec le serveur :", error);
+        // Ajoute un message d'erreur si la requête échoue
+        setMessages((msgs) => [...msgs, { user: "Chatbot", text: "Erreur lors de la communication avec le serveur." }]);
+      }
+
+      // Vide l'input
       setInput('');
-      // Simulation d'une réponse de chatbot
-      setMessages((msgs) => [...msgs, { user: "Chatbot", text: "Je suis ici pour vous aider!" }]);
     }
   };
 
