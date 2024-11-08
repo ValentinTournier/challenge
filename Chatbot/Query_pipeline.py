@@ -16,7 +16,6 @@ load_dotenv()
 
 # Initialize API key for Mistral
 api_key_mistral = os.getenv("MISTRAL_API_KEY1")
-print(f"Mistral API Key Loaded: {api_key_mistral}")
 
 # Initialize the MistralAIEmbedding and MistralAI
 embed_model = MistralAIEmbedding(model_name="mistral-embed", api_key=api_key_mistral)
@@ -115,8 +114,7 @@ def chat(query):
     return(final_answer)
 
 
-
-chat("Mon patient est atteint d'une cirrhose du foie")
+chat("cirrhose de foie")
  
 del embed_model
 del llm
