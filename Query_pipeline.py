@@ -16,9 +16,12 @@ load_dotenv()
 
 # Initialize API key for Mistral
 api_key_mistral = os.getenv("MISTRAL_API_KEY1")
+print("API Key Mistral:", api_key_mistral)
+
 # Initialize the MistralAIEmbedding and MistralAI
 embed_model = MistralAIEmbedding(model_name="mistral-embed", api_key=api_key_mistral)
 llm = MistralAI(api_key=api_key_mistral, model="open-mixtral-8x7b")
+embed_model='local'
 
 # Function to create or load an index
 def create_or_load_index(storage_path, datafolder):

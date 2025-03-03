@@ -1,5 +1,5 @@
-from llama_index.core.bridge .pydantic import BaseModel, Field
-from llama_index.core.bridge import BaseModel, Field
+from dotenv import load_dotenv
+from llama_index.core.bridge.pydantic import BaseModel, Field
 
 
 class OutputFormat_CCAM(BaseModel):
